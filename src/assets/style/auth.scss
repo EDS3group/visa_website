@@ -1,0 +1,35 @@
+.auth {
+    .header {
+        h2 {
+            color: $textBlack;
+            text-transform: capitalize;
+
+            span {
+                text-transform: uppercase;
+                color: $main-color;
+            }
+        }
+
+        p {
+            text-transform: capitalize;
+
+        }
+
+
+    }
+
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid $main-color !important;
+    border-radius: 20px;
+
+    &.modal {
+        border: none;
+    }
+
+    .field {
+        margin-bottom: 1.5rem;
+    }
+
+}

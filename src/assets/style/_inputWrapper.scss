@@ -1,0 +1,397 @@
+.multiselect {
+  text-align: unset;
+  min-width: 200px;
+  flex-direction: row-reverse;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+
+  .multiselect__select {
+    position: unset;
+    top: unset;
+    right: unset;
+    @include transitioning(0.3s);
+
+    &::before {
+      content: "\f078";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      top: 20%;
+      margin-top: 0;
+      border: none;
+    }
+  }
+
+  .multiselect__tags {
+    border: none;
+    background: transparent;
+    padding: 0 15px 0 8px;
+    @include flexStartAlignment;
+    width: 90%;
+
+    input,
+    .multiselect__single,
+    .multiselect__placeholder {
+      border: none;
+      font-size: 18px;
+      color: $main-color;
+      background-color: $cardBgColor;
+    }
+
+    .multiselect__placeholder {
+      color: #6b747c;
+    }
+
+    .multiselect__single {
+      margin-bottom: 0;
+    }
+
+    .multiselect__tags-wrap {
+      @include flexStartAlignment;
+      flex-wrap: wrap;
+      column-gap: 8px;
+
+      .multiselect__tag {
+        margin-block: 5px;
+        background: $second-color;
+
+        .multiselect__tag-icon {
+          &::after {
+            color: $main-color;
+          }
+
+          &:focus,
+          &:hover {
+            background: $second-color;
+          }
+        }
+      }
+    }
+  }
+
+  .multiselect__content-wrapper {
+    background: $cardBgColor;
+    border: none;
+    @include simpleShadow;
+
+    .multiselect__content {
+      .multiselect__element {
+        .multiselect__option {
+          color: $main-color;
+          @include flexStartAlignment;
+
+          img {
+            width: 40px;
+            height: 40px;
+            margin-inline-end: 10px;
+          }
+
+          .option__desc {
+            .option__small {
+              width: 30px;
+              height: 30px;
+              display: inline-block;
+              border-radius: 10px;
+              margin-inline-start: 10px;
+            }
+          }
+
+          &.multiselect__option--highlight {
+            background: $second-color;
+            color: #000;
+          }
+        }
+
+        .multiselect__option--selected {
+          background: $second-color !important;
+          color: #000 !important;
+        }
+      }
+    }
+  }
+}
+
+.input_wrapper {
+  position: relative;
+  padding: 4px 8px;
+  border: 1px solid #029E9D;
+  color: #FDC703;
+  border-radius: 30px;
+  min-height: 50px;
+
+  .toggle_pass_btn {
+    padding-inline: 8px;
+
+    .closed_eye {
+      display: none;
+    }
+
+    .open_eye {
+      display: inline-block;
+    }
+
+    &.password_is_visible {
+      .closed_eye {
+        display: inline-block;
+      }
+
+      .open_eye {
+        display: none;
+      }
+    }
+  }
+
+
+
+
+
+
+  &.date_input {
+    .b-form-btn-label-control.form-control {
+      border: none;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    .b-form-btn-label-control.form-control>.btn {
+      padding: 6px 0;
+    }
+
+    .b-form-btn-label-control.form-control>.form-control {
+      top: 50%;
+      left: 17px;
+      width: calc(100% - 20px);
+      position: absolute;
+      transform: translateY(-50%);
+    }
+
+
+  }
+
+  &.time_input {
+    .v-input {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      .v-input__prepend-outer {
+        display: none;
+      }
+
+      .v-input__control {
+        .v-input__slot {
+
+          &::before,
+          &::after,
+          .v-label {
+            display: none;
+          }
+        }
+
+        .v-text-field__details {
+          display: none;
+        }
+      }
+    }
+
+    .v-time-picker-clock__item {
+      .v-time-picker-clock__item--active {
+        .accent {
+          background-color: blue !important;
+          border-color: blue !important;
+        }
+      }
+    }
+  }
+
+
+  input,
+  textarea {
+    border: none;
+    font-size: 18px;
+    color: $main-color;
+    background-color: transparent;
+
+    &:disabled {
+      background-color: transparent;
+
+    }
+  }
+
+  textarea {
+    resize: none;
+    min-height: 100px;
+  }
+}
+
+.flex_wrapper {
+  @include flexStartAlignment;
+  align-items: flex-start;
+
+  .parent_content {
+    width: 100%;
+
+    .input_wrapper {
+      flex-direction: column;
+    }
+  }
+}
+
+.v-picker {
+  box-shadow: 0 0 10px 1px rgb(115 103 240 / 70%);
+
+  .v-picker__body {
+    background-color: $cardBgColor;
+    box-shadow: 0 0 10px 1px rgb(115 103 240 / 70%);
+  }
+}
+
+.buttons_wrapper {
+  margin-block: 25px;
+  @include flexCenterAlignment;
+
+  button {
+    &.button_style_1 {
+      position: relative;
+      @include buttonStyle1;
+
+      .btn_loader {
+        position: absolute;
+
+        &:after {
+          content: "";
+          position: fixed;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &.button_style_2 {
+      @include buttonStyle2;
+    }
+  }
+}
+
+.v-card {
+  &> {
+    & *:first-child {
+      &:not(.v-btn):not(.v-chip):not(.v-avatar) {
+        background-color: $cardBgColor;
+      }
+    }
+  }
+
+  .v-time-picker-title {
+    @include flexCenterAlignment;
+  }
+
+  .v-time-picker-title__time {
+    .v-picker__title__btn {
+      font-size: 50px;
+      height: unset;
+    }
+  }
+
+  .v-time-picker-title__time {
+    span {
+      font-size: 50px;
+      height: unset;
+    }
+  }
+}
+
+.v-picker {
+  .v-picker__body {
+    box-shadow: none !important;
+  }
+}
+
+.v-time-picker-clock__item {
+  &.v-time-picker-clock__item--active {
+    &.accent {
+      background-color: $second-color !important;
+      border-color: $second-color !important;
+    }
+  }
+}
+
+.v-time-picker-clock__inner {
+  .v-time-picker-clock__hand {
+    &.accent {
+      background-color: $second-color !important;
+      border-color: $second-color !important;
+    }
+  }
+}
+
+.ltr {
+  .input_wrapper {
+
+    &.top_label,
+    &.animated_placeholder {
+      .form-label {
+        left: 20px;
+        right: auto;
+      }
+    }
+  }
+}
+
+input,
+textarea {
+  min-height: 50px !important;
+  border-radius: 10px !important;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+}
+
+input {
+  &[type="number"] {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 100000000s 0s, color 100000000s 0s;
+  color: $main-color !important;
+  @include borderRadius(0);
+  box-shadow: 0 0 0 30px $cardBgColor inset !important;
+  -webkit-box-shadow: 0 0 0 30px $cardBgColor inset !important;
+  -moz-box-shadow: 0 0 0 30px $cardBgColor inset !important;
+  -o-box-shadow: 0 0 0 30px $cardBgColor inset !important;
+}
+
+button,
+a {
+  &.button_style_1 {
+    @include buttonStyle1;
+  }
+
+  &.button_style_2 {
+    @include buttonStyle2;
+  }
+}
+
+.v-stepper {
+  .v-divider {
+    border-color: #2f8d7e !important;
+  }
+}
+
+.v-stepper__step__step {
+  padding: 1.1rem !important;
+}

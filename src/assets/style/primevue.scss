@@ -1,0 +1,67 @@
+.p-inputtext:enabled:focus,
+.p-inputtext:enabled:hover,
+textarea:focus-visible,
+textarea:hover,
+.p-dropdown:hover,
+.p-dropdown:focus,
+.p-dropdown:focus-visible {
+    border-color: $main-color !important;
+
+}
+
+.p-calendar {
+    width: 100%;
+}
+
+.p-calendar-w-btn .p-inputtext {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.p-dropdown {
+    width: 100%;
+    text-align: start;
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+body[dir='rtl'] {
+
+    .p-calendar-w-btn .p-inputtext {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.p-input-icon-left>i {
+    z-index: 10;
+}
+
+.p-input-icon-right>i {
+    z-index: 10;
+}
+
+.p-input-icon-left>.p-inputnumber {
+    width: 100%;
+}
+
+.p-input-icon-right>.p-inputnumber {
+    width: 100%;
+}
+
+.p-input-icon-left>.p-inputnumber>.p-inputtext {
+    padding-left: 2.5rem;
+}
+
+.p-input-icon-right>.p-inputnumber>.p-inputtext {
+    padding-left: 2.5rem;
+}
+
+.p-input-icon-left>.p-calendar>.p-inputtext {
+    padding-left: 2.5rem;
+}
+
+.p-input-icon-right>.p-calendar>.p-inputtext {
+    padding-left: 2.5rem;
+}
